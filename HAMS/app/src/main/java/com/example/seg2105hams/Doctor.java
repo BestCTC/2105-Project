@@ -1,6 +1,7 @@
 package com.example.seg2105hams;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Doctor {
     private String FirstName;
@@ -10,10 +11,10 @@ public class Doctor {
     private String PhoneNo;
     private String Address;
     private String EmployeeNo;
-    private String[] Specialties;
+    private ArrayList<String> Specialties;
 
     //Constructor
-    public void Doctor(String firstName,String lastName,String email,String password,String phoneNo,String address,String employeeNo,String[] specialties){
+    public Doctor(String firstName,String lastName,String email,String password,String phoneNo,String address,String employeeNo,ArrayList<String> specialties){
         FirstName = firstName;
         LastName = lastName;
         Email = email;
@@ -21,7 +22,7 @@ public class Doctor {
         PhoneNo = phoneNo;
         Address = address;
         EmployeeNo = employeeNo;
-        Arrays.sort(specialties);
+        Collections.sort(specialties);
         Specialties = specialties;
     }
     //Setters
@@ -32,8 +33,8 @@ public class Doctor {
     public void setPhoneNo(String phoneNo) {PhoneNo = phoneNo;}
     public void setAddress(String address) {Address = address;}
     public void setEmployeeNo(String employeeNo) {EmployeeNo = employeeNo;}
-    public void setSpecialties(String[] specialties) {
-        Arrays.sort(specialties);
+    public void setSpecialties(ArrayList<String> specialties) {
+        Collections.sort(specialties);
         Specialties = specialties;
     }
 
@@ -45,5 +46,6 @@ public class Doctor {
     public String getPhoneNo() {return PhoneNo;}
     public String getAddress() {return Address;}
     public String getEmployeeNo() {return EmployeeNo;}
-    public String[] getSpecialties() {return Specialties;}
+    public ArrayList<String> getSpecialties() {return Specialties;}
+
 }
