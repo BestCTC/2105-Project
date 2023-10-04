@@ -13,7 +13,7 @@ public class Doctor {
     private String[] Specialties;
 
     //Constructor
-    public void Doctor(String firstName,String lastName,String email,String password,String phoneNo,String address,String employeeNo,String[] specialties){
+    public Doctor(String firstName,String lastName,String email,String password,String phoneNo,String address,String employeeNo,String[] specialties){
         FirstName = firstName;
         LastName = lastName;
         Email = email;
