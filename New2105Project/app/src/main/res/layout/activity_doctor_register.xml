@@ -17,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Patient Register"
+            android:text="Doctor Register"
             android:textSize="30dp" />
 
         <LinearLayout
@@ -26,7 +26,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/firstNameEditText"
+                android:id="@+id/FirstNameEditText"
                 android:layout_width="193dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -34,7 +34,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/lastNameEditText"
+                android:id="@+id/LastNameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -44,7 +44,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/EmailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -52,7 +52,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/PasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -60,7 +60,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/phoneNumberEditText"
+            android:id="@+id/PhoneNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -68,7 +68,7 @@
             android:inputType="phone" />
 
         <EditText
-            android:id="@+id/addressEditText"
+            android:id="@+id/AddressEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -76,12 +76,27 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/healthCardNumberEditText"
+            android:id="@+id/EmployeeNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Health Card Number:"
+            android:hint="Employee Number:"
             android:inputType="text" />
+
+        <EditText
+            android:id="@+id/SpecialtiesEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Specialties: " />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(If more than two specialtie, use &quot;,&quot; to separate them out (e.g. Stomatology, Brain Surgery, Rhinology )"
+            android:textSize="10dp" />
 
         <RadioGroup
             android:id="@+id/genderGroup"
