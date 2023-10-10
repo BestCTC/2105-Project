@@ -20,13 +20,18 @@ package com.example.new2105project;
 public class Patient_Register extends AppCompatActivity {
 
 
+    /**
+     * 创建会用到的variable
+     * */
     DatabaseReference accountRefference;
 
     EditText accountEditText, passwordEditText;
 
     RadioGroup genderGroup;
 
-
+    /**
+     * 原来自带的几行代码，connectDB()：主动连接到database 和 initialComponent()：从layout中读取输入的信息，放到上面几行创建的variable里
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,9 @@ public class Patient_Register extends AppCompatActivity {
     }
 
 
+    /**
+     * 主动连接到database
+     * */
     private void connectDB(){
         accountRefference = FirebaseDatabase.getInstance().getReference("accounts");
 
@@ -58,15 +66,28 @@ public class Patient_Register extends AppCompatActivity {
 
     }
 
+    /**
+     * 从layout中读取输入的信息，放到上面几行创建的variable里
+     * (EditText) findViewById(R.id.firstNameEditText）
+     * (layout中的文本/按钮类型) findViewById（R.id.对应文本框/按钮的名字）
+     * */
     private void initialComponent() {
-        accountEditText = (EditText) findViewById(R.id.accounteditText);
-        passwordEditText = (EditText) findViewById(R.id.passwordeditText);
+        accountEditText = (EditText) findViewById(R.id.firstNameEditText);
+        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
         genderGroup = (RadioGroup) findViewById(R.id.genderGroup);
     }
 
+
+    /**
+     * 将数据放到database
+     * */
     public void register(View view) {
         String name = accountEditText.getText().toString();
         String password = passwordEditText.getText().toString();
+
+        /**
+         * 选择性别
+         * */
         Gender gender = null;
         if (genderGroup.getCheckedRadioButtonId() == R.id.MaleButton){
             gender = Gender.MALE;
