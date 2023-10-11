@@ -3,72 +3,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="409dp"
-        android:layout_height="35dp"
-        android:background="#9A9E9B98"
-        android:text="Please Enter the email and password to Login:"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="4dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/EnterEmailEditText"
-        android:layout_width="366dp"
-        android:layout_height="39dp"
-        android:ems="10"
-        android:hint="Email: "
-        android:inputType="text"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="53dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="409dp"
+            android:layout_height="35dp"
+            android:background="#9A9E9B98"
+            android:text="Please Enter the email and password to Login:"
+            android:textSize="17dp" />
 
-    <EditText
-        android:id="@+id/EnterPasswordEditText"
-        android:layout_width="365dp"
-        android:layout_height="41dp"
-        android:ems="10"
-        android:hint="Password:"
-        android:inputType="text"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="102dp" />
+        <EditText
+            android:id="@+id/login_EnterEmailEditText"
+            android:layout_width="366dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:hint="Email: "
+            android:inputType="text" />
 
-    <Button
-        android:id="@+id/LoginButton"
-        android:layout_width="201dp"
-        android:layout_height="80dp"
-        android:backgroundTint="#070000"
-        android:text="Login"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="158dp" />
+        <EditText
+            android:id="@+id/login_EnterPasswordEditText"
+            android:layout_width="365dp"
+            android:layout_height="41dp"
+            android:ems="10"
+            android:hint="Password:"
+            android:inputType="text" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Do not have a account?"
-        android:textColor="#2D64EF"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="263dp" />
+        <Button
+            android:id="@+id/LoginButton"
+            android:layout_width="201dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#070000"
+            android:text="Login" />
 
-    <Button
-        android:id="@+id/RegisterPatientButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#817F77"
-        android:text="Register a patient account "
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="300dp" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do not have a account?"
+            android:textColor="#2D64EF" />
 
-    <Button
-        android:id="@+id/RegisterDoctorButton"
-        android:layout_width="217dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#00D6D6"
-        android:text="Register a doctor account"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="358dp" />
+        <Button
+            android:id="@+id/RegisterPatientButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#817F77"
+            android:onClick="Patient_Register"
+            android:text="Register a patient account " />
+
+        <Button
+            android:id="@+id/RegisterDoctorButton"
+            android:layout_width="217dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#00D6D6"
+            android:text="Register a doctor account"
+            android:onClick="Doctor_Register"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

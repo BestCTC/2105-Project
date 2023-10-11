@@ -5,7 +5,6 @@ package com.example.new2105project;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.EditText;
-        import android.widget.RadioButton;
         import android.widget.RadioGroup;
 
         import com.example.new2105project.Entity.Account;
@@ -72,9 +71,9 @@ public class Patient_Register extends AppCompatActivity {
      * (layout中的文本/按钮类型) findViewById（R.id.对应文本框/按钮的名字）
      * */
     private void initialComponent() {
-        accountEditText = (EditText) findViewById(R.id.firstNameEditText);
-        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
-        genderGroup = (RadioGroup) findViewById(R.id.genderGroup);
+        accountEditText = (EditText) findViewById(R.id.patient_firstNameEditText);
+        passwordEditText = (EditText) findViewById(R.id.patient_passwordEditText);
+        genderGroup = (RadioGroup) findViewById(R.id.patient_genderGroup);
     }
 
 
@@ -89,9 +88,9 @@ public class Patient_Register extends AppCompatActivity {
          * 选择性别
          * */
         Gender gender = null;
-        if (genderGroup.getCheckedRadioButtonId() == R.id.MaleButton){
+        if (genderGroup.getCheckedRadioButtonId() == R.id.patient_MaleButton){
             gender = Gender.MALE;
-        } else if (genderGroup.getCheckedRadioButtonId() == R.id.FemaleButton){
+        } else if (genderGroup.getCheckedRadioButtonId() == R.id.patient_FemaleButton){
             gender = Gender.FEMALE;
         }
 
@@ -109,7 +108,9 @@ public class Patient_Register extends AppCompatActivity {
             //}
         //});
 
-        //Account account = new Account(name, password, Account_Types.PATIENT, );
-        //accountRefference.child(name).setValue(account);
+        Account account = new Account(name, password, Account_Types.PATIENT, gender);
+        accountRefference.child(name).setValue(account);
+
+        finish();
     }
 }

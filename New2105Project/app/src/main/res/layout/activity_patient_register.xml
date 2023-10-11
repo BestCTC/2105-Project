@@ -26,7 +26,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/firstNameEditText"
+                android:id="@+id/patient_firstNameEditText"
                 android:layout_width="193dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -34,7 +34,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/lastNameEditText"
+                android:id="@+id/patient_lastNameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -52,7 +52,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/patient_passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -84,20 +84,20 @@
             android:inputType="text" />
 
         <RadioGroup
-            android:id="@+id/genderGroup"
+            android:id="@+id/patient_genderGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/MaleButton"
+                android:id="@+id/patient_MaleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Male" />
 
             <RadioButton
-                android:id="@+id/FemaleButton"
+                android:id="@+id/patient_FemaleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
