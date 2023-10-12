@@ -46,14 +46,15 @@ public class LoginActivity extends AppCompatActivity {
      * 选择账户类型并点击跳转到选择角色的页面
      */
     public void Patient_Register(View view) {
-        Intent intent = new Intent(getApplicationContext(), SelectRole.class);
+        Intent intent = new Intent(getApplicationContext(), Patient_Register.class);
         startActivity(intent);
     }
 
     public void Doctor_Register(View view) {
-        Intent intent = new Intent(getApplicationContext(), SelectRole.class);
+        Intent intent = new Intent(getApplicationContext(), Doctor_Register.class);
         startActivity(intent);
     }
+
 
     public void login(View view) {
         name = accountEditText.getText().toString();
@@ -63,10 +64,10 @@ public class LoginActivity extends AppCompatActivity {
          * 若登陆时未填写姓名或密码,发出提示
          * */
         if (name.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Account name can't be empty!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), "Account name can't be empty!", Toast.LENGTH_LONG);
             toast.show();
         } else if (password.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Password can't be empty!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), "Password can't be empty!", Toast.LENGTH_LONG);
             toast.show();
         } else {
             accountsReference.child(name).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -87,5 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         }
+
+
     }
 }
