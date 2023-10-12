@@ -65,7 +65,12 @@ public class Patient_Register extends AppCompatActivity {
 
     }
 
+
     /**
+     * 所有的R.id.
+     * 必须和 对应layout 上的
+     * 按键/文本框/button的ID保持一致
+     *
      * 从layout中读取输入的信息，放到上面几行创建的variable里
      * (EditText) findViewById(R.id.firstNameEditText）
      * (layout中的文本/按钮类型) findViewById（R.id.对应文本框/按钮的名字）

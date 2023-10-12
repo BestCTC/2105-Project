@@ -37,9 +37,14 @@ public class LoginActivity extends AppCompatActivity {
         accountsReference = FirebaseDatabase.getInstance().getReference("accounts");
     }
 
+    /**
+     * 所有的R.id.
+     * 必须和 对应layout 上的
+     * 按键/文本框/button的ID保持一致
+     */
     private void initComponent() {
-        accountEditText = (EditText) findViewById(R.id.patient_firstNameEditText);
-        passwordEditText = (EditText) findViewById(R.id.patient_passwordEditText);
+        accountEditText = (EditText) findViewById(R.id.login_EnterEmailEditText);
+        passwordEditText = (EditText) findViewById(R.id.login_EnterPasswordEditText);
     }
 
     /**
@@ -59,6 +64,10 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
         name = accountEditText.getText().toString();
         password = passwordEditText.getText().toString();
+
+        System.out.println(name.equals(""));
+        System.out.println(password.equals(""));
+
 
         /**
          * 若登陆时未填写姓名或密码,发出提示
