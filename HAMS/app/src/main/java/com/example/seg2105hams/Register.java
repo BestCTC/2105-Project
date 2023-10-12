@@ -3,6 +3,8 @@ package com.example.seg2105hams;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,5 +43,12 @@ public class Register extends AppCompatActivity {
             }
         });
 
+
     }
+
+    private void initComponent(){
+        accountEditText= (EditText) findViewById(R.id.accountEditText);
+        pwdEditText = (EditText) findViewById(R.id.pwdEditText);
+    }
+
 }

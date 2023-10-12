@@ -111,6 +111,9 @@ public class Patient_Register extends AppCompatActivity {
         Account account = new Account(name, password, Account_Types.PATIENT, gender);
         accountRefference.child(name).setValue(account);
 
+        /**
+         * 退出当前页面
+         * */
         finish();
     }
 }

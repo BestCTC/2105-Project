@@ -1,12 +1,24 @@
 package com.example.new2105project.Entity;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     private String name;
     private String password;
 
     private Account_Types account_types;
 
     private Gender gender;
+
+    private String Role;
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        Role = role;
+    }
 
     public Account() {
     }
@@ -49,5 +61,15 @@ public class Account {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", account_types=" + account_types +
+                ", gender=" + gender +
+                '}';
     }
 }
