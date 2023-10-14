@@ -16,6 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="30dp"/>
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/LogoffButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log Off"
+            android:onClick = "logoff"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
