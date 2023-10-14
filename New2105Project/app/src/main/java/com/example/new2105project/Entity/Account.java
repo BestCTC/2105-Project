@@ -10,6 +10,10 @@ public class Account implements Serializable {
 
     private Gender gender;
 
+    private String phoneNum;
+    private String address;
+    private String empNumOrCardNum;
+
     private String Role;
 
     public String getRole() {
@@ -23,11 +27,14 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(String name, String password, Account_Types account_types, Gender gender) {
+    public Account(String name, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum) {
         this.name = name;
         this.password = password;
         this.account_types = account_types;
         this.gender = gender;
+        this.phoneNum = phoneNum;
+        this.address = address;
+        this.empNumOrCardNum = empNumOrCardNum;
     }
 
 
