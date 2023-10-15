@@ -16,9 +16,9 @@ public class Welcome extends AppCompatActivity {
     TextView welcomeTextview;
 
     /**
-     * 所有的R.id.
-     * 必须和 对应layout 上的
-     * 按键/文本框/button的ID保持一致
+     * All R.id.
+     * Must correspond to on the layout
+     * Keep the IDs of keys/text boxes/buttons consistent
      */
 
     @Override

@@ -38,9 +38,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /**
-     * 所有的R.id.
-     * 必须和 对应layout 上的
-     * 按键/文本框/button的ID保持一致
+     * All R.id.
+     * Must correspond to on the layout
+     * Keep the IDs of keys/text boxes/buttons consistent
      */
     private void initComponent() {
         accountEditText = (EditText) findViewById(R.id.login_EnterEmailEditText);
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /**
-     * 选择账户类型并点击跳转到选择角色的页面
+     * Select the account type and click to jump to the page for selecting roles
      */
     public void Patient_Register(View view) {
         Intent intent = new Intent(getApplicationContext(), Patient_Register.class);
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         /**
-         * 若登陆时未填写姓名或密码,发出提示
+         * If you do not fill in your name or password when logging in, a prompt will be issued.
          * */
         if (name.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Account name can't be empty!", Toast.LENGTH_LONG);

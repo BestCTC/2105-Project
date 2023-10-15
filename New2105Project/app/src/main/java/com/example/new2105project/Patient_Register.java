@@ -20,7 +20,7 @@ public class Patient_Register extends AppCompatActivity {
 
 
     /**
-     * 创建会用到的variable
+     * Create variables that will be used
      * */
     DatabaseReference accountRefference;
 
@@ -29,7 +29,9 @@ public class Patient_Register extends AppCompatActivity {
     RadioGroup genderGroup;
 
     /**
-     * 原来自带的几行代码，connectDB()：主动连接到database 和 initialComponent()：从layout中读取输入的信息，放到上面几行创建的variable里
+     * The few lines of code that originally came with it,
+     * connectDB(): actively connect to the database
+     * initialComponent(): read the input information from the layout and put it into the variable created in the above lines.
      * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class Patient_Register extends AppCompatActivity {
 
 
     /**
-     * 主动连接到database
+     * Actively connect to the database
      * */
     private void connectDB(){
         accountRefference = FirebaseDatabase.getInstance().getReference("accounts");
@@ -67,13 +69,13 @@ public class Patient_Register extends AppCompatActivity {
 
 
     /**
-     * 所有的R.id.
-     * 必须和 对应layout 上的
-     * 按键/文本框/button的ID保持一致
+     * All R.id.
+     * Must correspond to on the layout
+     * Keep the IDs of keys/text boxes/buttons consistent
      *
-     * 从layout中读取输入的信息，放到上面几行创建的variable里
-     * (EditText) findViewById(R.id.firstNameEditText）
-     * (layout中的文本/按钮类型) findViewById（R.id.对应文本框/按钮的名字）
+     * Read the input information from the layout and put it into the variable created in the above lines
+     * (EditText) findViewById(R.id.firstNameEditText)
+     * (Text/button type in layout) findViewById (R.id. corresponds to the name of the text box/button)
      * */
     private void initialComponent() {
         accountEditText = (EditText) findViewById(R.id.patient_firstNameEditText);
@@ -86,7 +88,7 @@ public class Patient_Register extends AppCompatActivity {
 
 
     /**
-     * 将数据放到database
+     * Put data into database
      * */
     public void register(View view) {
         String name = accountEditText.getText().toString();
@@ -95,7 +97,7 @@ public class Patient_Register extends AppCompatActivity {
         String address = addressEditText.getText().toString();
         String healthCardNum = healthCardNumEditText.getText().toString();
         /**
-         * 选择性别
+         * Select gender
          * */
         Gender gender = null;
         if (genderGroup.getCheckedRadioButtonId() == R.id.patient_MaleButton){
@@ -122,7 +124,7 @@ public class Patient_Register extends AppCompatActivity {
         accountRefference.child(name).setValue(account);
 
         /**
-         * 退出当前页面
+         * Exit current page
          * */
         finish();
     }
