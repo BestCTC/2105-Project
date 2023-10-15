@@ -107,8 +107,7 @@ public class Account implements Serializable {
     @Override
     public String toString() {
 
-        String empOrCard;
-        if(account_types.equals("DOCTOR")){
+        if(account_types.equals(Account_Types.DOCTOR)){
             return "Account{" +
                     "name='" + name + '\'' +
                     ", password='" + password + '\'' +
@@ -120,7 +119,7 @@ public class Account implements Serializable {
                     '}';
         }
 
-        else if(account_types.equals("PATIENT")){
+        else if(account_types.equals(Account_Types.PATIENT)){
             return "Account{" +
                     "name='" + name + '\'' +
                     ", password='" + password + '\'' +

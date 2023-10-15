@@ -44,7 +44,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/patient_emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -60,7 +60,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/phoneNumberEditText"
+            android:id="@+id/patient_phoneNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -68,7 +68,7 @@
             android:inputType="phone" />
 
         <EditText
-            android:id="@+id/addressEditText"
+            android:id="@+id/patient_addressEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -76,7 +76,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/healthCardNumberEditText"
+            android:id="@+id/patient_healthCardNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

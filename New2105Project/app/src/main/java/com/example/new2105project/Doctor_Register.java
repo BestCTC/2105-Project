@@ -76,7 +76,6 @@ public class Doctor_Register extends AppCompatActivity {
         addressEditText = (EditText) findViewById(R.id.doctor_AddressEditText);
         employeeNumEditText = (EditText) findViewById(R.id.doctor_EmployeeNumberEditText);
         specialtiesEditText = (EditText) findViewById(R.id.doctor_SpecialtiesEditText);
-
         genderGroup = (RadioGroup) findViewById(R.id.doctor_genderGroup);
 
     }
@@ -91,6 +90,7 @@ public class Doctor_Register extends AppCompatActivity {
         String phoneNum = phoneNumEditText.getText().toString();
         String address = addressEditText.getText().toString();
         String employeeNum = employeeNumEditText.getText().toString();
+        String specialties = specialtiesEditText.getText().toString();
         /**
          * 选择性别
          * */
@@ -115,7 +115,7 @@ public class Doctor_Register extends AppCompatActivity {
         //}
         //});
 
-        Account account = new Account(name, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum);
+        Account account = new Account(name, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties);
         accountRefference.child(name).setValue(account);
 
         finish();
