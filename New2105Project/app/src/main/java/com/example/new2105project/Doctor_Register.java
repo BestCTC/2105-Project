@@ -25,7 +25,7 @@ public class Doctor_Register extends AppCompatActivity {
      * */
     DatabaseReference accountRefference;
 
-    EditText accountEditText, passwordEditText, phoneNumEditText, addressEditText, employeeNumEditText, specialtiesEditText;
+    EditText accountEditText, passwordEditText, emailEditText, phoneNumEditText, addressEditText, employeeNumEditText, specialtiesEditText;
 
     RadioGroup genderGroup;
     @Override
@@ -76,6 +76,7 @@ public class Doctor_Register extends AppCompatActivity {
         addressEditText = (EditText) findViewById(R.id.doctor_AddressEditText);
         employeeNumEditText = (EditText) findViewById(R.id.doctor_EmployeeNumberEditText);
         specialtiesEditText = (EditText) findViewById(R.id.doctor_SpecialtiesEditText);
+        emailEditText = (EditText) findViewById(R.id.doctor_EmailEditText);
         genderGroup = (RadioGroup) findViewById(R.id.doctor_genderGroup);
 
     }
@@ -91,6 +92,7 @@ public class Doctor_Register extends AppCompatActivity {
         String address = addressEditText.getText().toString();
         String employeeNum = employeeNumEditText.getText().toString();
         String specialties = specialtiesEditText.getText().toString();
+        String email = emailEditText.getText().toString();
         /**
          * Select gender
          * */
@@ -115,7 +117,7 @@ public class Doctor_Register extends AppCompatActivity {
         //}
         //});
 
-        Account account = new Account(name, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties);
+        Account account = new Account(name, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
         accountRefference.child(name).setValue(account);
 
         finish();

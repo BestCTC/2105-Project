@@ -12,6 +12,7 @@ public class Account implements Serializable {
 
     private String phoneNum;
     private String address;
+    private String email;
     private String empNumOrCardNum;
     private String specialties;
 
@@ -28,7 +29,7 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(String name, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum, String specialties) {
+    public Account(String name, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum, String specialties, String email) {
         this.name = name;
         this.password = password;
         this.account_types = account_types;
@@ -37,6 +38,7 @@ public class Account implements Serializable {
         this.address = address;
         this.empNumOrCardNum = empNumOrCardNum;
         this.specialties = specialties;
+        this.email = email;
     }
 
 
@@ -104,6 +106,14 @@ public class Account implements Serializable {
         this.specialties = specialties;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
 
@@ -111,11 +121,12 @@ public class Account implements Serializable {
             return "Account{" +
                     "name='" + name + '\'' +
                     ", password='" + password + '\'' +
-                    ", account_types=" + account_types +
-                    ", gender=" + gender +
-                    ", phone number=" + phoneNum +
-                    ", address=" + address +
-                    ", employee number=" + empNumOrCardNum +
+                    ", account_types=" + account_types +'\'' +
+                    ", email='" + email + '\'' +
+                    ", gender=" + gender +'\'' +
+                    ", phone number=" + phoneNum +'\'' +
+                    ", address=" + address +'\'' +
+                    ", employee number=" + empNumOrCardNum +'\'' +
                     '}';
         }
 
@@ -123,11 +134,12 @@ public class Account implements Serializable {
             return "Account{" +
                     "name='" + name + '\'' +
                     ", password='" + password + '\'' +
-                    ", account_types=" + account_types +
-                    ", gender=" + gender +
-                    ", phone number=" + phoneNum +
-                    ", address=" + address +
-                    ", health card number=" + empNumOrCardNum +
+                    ", account_types=" + account_types +'\'' +
+                    ", email='" + email + '\'' +
+                    ", gender=" + gender +'\'' +
+                    ", phone number=" + phoneNum +'\'' +
+                    ", address=" + address +'\'' +
+                    ", health card number=" + empNumOrCardNum +'\'' +
                     '}';
         }
         else{
