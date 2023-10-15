@@ -113,7 +113,7 @@ public class Patient_Register extends AppCompatActivity {
             //}
         //});
 
-        Account account = new Account(name, password, Account_Types.PATIENT, gender);
+        Account account = new Account(name, password, Account_Types.PATIENT, gender, null, null, null);
         accountRefference.child(name).setValue(account);
 
         /**

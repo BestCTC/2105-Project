@@ -76,7 +76,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/EmployeeNumberEditText"
+            android:id="@+id/doctor_EmployeeNumberEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -84,7 +84,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/SpecialtiesEditText"
+            android:id="@+id/doctor_SpecialtiesEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

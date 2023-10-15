@@ -13,6 +13,7 @@ public class Account implements Serializable {
     private String phoneNum;
     private String address;
     private String empNumOrCardNum;
+    private String specialties;
 
     private String Role;
 
@@ -27,7 +28,7 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(String name, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum) {
+    public Account(String name, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum, String specialties) {
         this.name = name;
         this.password = password;
         this.account_types = account_types;
@@ -35,6 +36,7 @@ public class Account implements Serializable {
         this.phoneNum = phoneNum;
         this.address = address;
         this.empNumOrCardNum = empNumOrCardNum;
+        this.specialties = specialties;
     }
 
 
@@ -70,13 +72,70 @@ public class Account implements Serializable {
         this.gender = gender;
     }
 
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmpNumOrCardNum() {
+        return empNumOrCardNum;
+    }
+
+    public void setEmpNumOrCardNum(String empNumOrCardNum) {
+        this.empNumOrCardNum = empNumOrCardNum;
+    }
+
+    public String getSpecialties() {
+        return specialties;
+    }
+
+    public void setSpecialties(String specialties) {
+        this.specialties = specialties;
+    }
+
     @Override
     public String toString() {
-        return "Account{" +
-                "name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", account_types=" + account_types +
-                ", gender=" + gender +
-                '}';
+
+        String empOrCard;
+        if(account_types.equals("DOCTOR")){
+            return "Account{" +
+                    "name='" + name + '\'' +
+                    ", password='" + password + '\'' +
+                    ", account_types=" + account_types +
+                    ", gender=" + gender +
+                    ", phone number=" + phoneNum +
+                    ", address=" + address +
+                    ", employee number=" + empNumOrCardNum +
+                    '}';
+        }
+
+        else if(account_types.equals("PATIENT")){
+            return "Account{" +
+                    "name='" + name + '\'' +
+                    ", password='" + password + '\'' +
+                    ", account_types=" + account_types +
+                    ", gender=" + gender +
+                    ", phone number=" + phoneNum +
+                    ", address=" + address +
+                    ", health card number=" + empNumOrCardNum +
+                    '}';
+        }
+        else{
+            return "Account{" +
+                    "name='" + name + '\'' +
+                    ", password='" + password + '\'' +", account_types=" + account_types +"}";
+        }
+
     }
 }

@@ -42,6 +42,22 @@ public class Doctor_Register extends AppCompatActivity {
      * */
     private void connectDB(){
         accountRefference = FirebaseDatabase.getInstance().getReference("accounts");
+
+
+        accountRefference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot child : snapshot.getChildren()){
+                    System.out.println(child);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     /**
@@ -57,7 +73,9 @@ public class Doctor_Register extends AppCompatActivity {
         accountEditText = (EditText) findViewById(R.id.doctor_FirstNameEditText);
         passwordEditText = (EditText) findViewById(R.id.doctor_PasswordEditText);
         phoneNumEditText = (EditText) findViewById(R.id.doctor_PhoneNumberEditText);
-
+        addressEditText = (EditText) findViewById(R.id.doctor_AddressEditText);
+        employeeNumEditText = (EditText) findViewById(R.id.doctor_EmployeeNumberEditText);
+        specialtiesEditText = (EditText) findViewById(R.id.doctor_SpecialtiesEditText);
 
         genderGroup = (RadioGroup) findViewById(R.id.doctor_genderGroup);
 
