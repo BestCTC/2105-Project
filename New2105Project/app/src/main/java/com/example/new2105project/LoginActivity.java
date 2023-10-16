@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText accountEditText, passwordEditText;
 
-    String name, password;
+    String email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,24 +62,24 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void login(View view) {
-        name = accountEditText.getText().toString();
+        email = accountEditText.getText().toString();
         password = passwordEditText.getText().toString();
 
-        System.out.println(name.equals(""));
+        System.out.println(email.equals(""));
         System.out.println(password.equals(""));
 
 
         /**
          * If you do not fill in your name or password when logging in, a prompt will be issued.
          * */
-        if (name.equals("")) {
+        if (email.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Account name can't be empty!", Toast.LENGTH_LONG);
             toast.show();
         } else if (password.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Password can't be empty!", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            accountsReference.child(name).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            accountsReference.child(email).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     Account account = task.getResult().getValue(Account.class);

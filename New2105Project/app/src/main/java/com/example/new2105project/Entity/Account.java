@@ -3,7 +3,8 @@ package com.example.new2105project.Entity;
 import java.io.Serializable;
 
 public class Account implements Serializable {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String password;
 
     private Account_Types account_types;
@@ -29,8 +30,9 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(String name, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum, String specialties, String email) {
-        this.name = name;
+    public Account(String firstName,String lastName, String password, Account_Types account_types, Gender gender, String phoneNum, String address, String empNumOrCardNum, String specialties, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
         this.account_types = account_types;
         this.gender = gender;
@@ -42,12 +44,20 @@ public class Account implements Serializable {
     }
 
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -119,7 +129,8 @@ public class Account implements Serializable {
 
         if(account_types.equals(Account_Types.DOCTOR)){
             return "Account{" +
-                    "name='" + name + '\'' +
+                    "first name='" + firstName + '\'' +
+                    "last name='" + lastName + '\'' +
                     ", password='" + password + '\'' +
                     ", account_types=" + account_types +'\'' +
                     ", email='" + email + '\'' +
@@ -132,7 +143,8 @@ public class Account implements Serializable {
 
         else if(account_types.equals(Account_Types.PATIENT)){
             return "Account{" +
-                    "name='" + name + '\'' +
+                    "first name='" + firstName + '\'' +
+                    "last name='" + lastName + '\'' +
                     ", password='" + password + '\'' +
                     ", account_types=" + account_types +'\'' +
                     ", email='" + email + '\'' +
@@ -144,7 +156,7 @@ public class Account implements Serializable {
         }
         else{
             return "Account{" +
-                    "name='" + name + '\'' +
+                    "login name='" + email + '\'' +
                     ", password='" + password + '\'' +", account_types=" + account_types +"}";
         }
 

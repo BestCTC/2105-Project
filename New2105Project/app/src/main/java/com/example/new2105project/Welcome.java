@@ -30,7 +30,7 @@ public class Welcome extends AppCompatActivity {
 
         Intent intent = getIntent();
         account = (Account) intent.getSerializableExtra("account");
-        welcomeTextview.setText(String.format("Welcome! You (%s) are logged in as <%s>! ", account.getName(), account.getAccount_types()));
+        welcomeTextview.setText(String.format("Welcome! You (%s) are logged in as <%s>! ", account.getFirstName(), account.getAccount_types()));
     }
 
     public void logoff(View view) {

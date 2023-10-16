@@ -24,7 +24,7 @@ public class Patient_Register extends AppCompatActivity {
      * */
     DatabaseReference accountRefference;
 
-    EditText accountEditText, passwordEditText, emailEditText, phoneNumEditText, addressEditText, healthCardNumEditText;
+    EditText firstEditText, lastEditText, passwordEditText, emailEditText, phoneNumEditText, addressEditText, healthCardNumEditText;
 
     RadioGroup genderGroup;
 
@@ -78,7 +78,8 @@ public class Patient_Register extends AppCompatActivity {
      * (Text/button type in layout) findViewById (R.id. corresponds to the name of the text box/button)
      * */
     private void initialComponent() {
-        accountEditText = (EditText) findViewById(R.id.patient_firstNameEditText);
+        firstEditText = (EditText) findViewById(R.id.patient_firstNameEditText);
+        lastEditText = (EditText) findViewById(R.id.patient_lastNameEditText);
         passwordEditText = (EditText) findViewById(R.id.patient_passwordEditText);
         genderGroup = (RadioGroup) findViewById(R.id.patient_genderGroup);
         phoneNumEditText = (EditText) findViewById(R.id.patient_phoneNumberEditText);
@@ -92,7 +93,8 @@ public class Patient_Register extends AppCompatActivity {
      * Put data into database
      * */
     public void register(View view) {
-        String name = accountEditText.getText().toString();
+        String first = firstEditText.getText().toString();
+        String last = lastEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String phoneNum = phoneNumEditText.getText().toString();
         String address = addressEditText.getText().toString();
@@ -122,8 +124,8 @@ public class Patient_Register extends AppCompatActivity {
             //}
         //});
 
-        Account account = new Account(name, password, Account_Types.PATIENT, gender, phoneNum, address, healthCardNum, null,email);
-        accountRefference.child(name).setValue(account);
+        Account account = new Account(first, last, password, Account_Types.PATIENT, gender, phoneNum, address, healthCardNum, null,email);
+        accountRefference.child(email).setValue(account);
 
         /**
          * Exit current page

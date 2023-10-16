@@ -25,7 +25,7 @@ public class Doctor_Register extends AppCompatActivity {
      * */
     DatabaseReference accountRefference;
 
-    EditText accountEditText, passwordEditText, emailEditText, phoneNumEditText, addressEditText, employeeNumEditText, specialtiesEditText;
+    EditText firstEditText, lastEditText, passwordEditText, emailEditText, phoneNumEditText, addressEditText, employeeNumEditText, specialtiesEditText;
 
     RadioGroup genderGroup;
     @Override
@@ -70,7 +70,8 @@ public class Doctor_Register extends AppCompatActivity {
      * (Text/button type in layout) findViewById (R.id. corresponds to the name of the text box/button)
      * */
     private void initialComponent() {
-        accountEditText = (EditText) findViewById(R.id.doctor_FirstNameEditText);
+        firstEditText= (EditText) findViewById(R.id.doctor_FirstNameEditText);
+        lastEditText = (EditText) findViewById(R.id.doctor_LastNameEditText);
         passwordEditText = (EditText) findViewById(R.id.doctor_PasswordEditText);
         phoneNumEditText = (EditText) findViewById(R.id.doctor_PhoneNumberEditText);
         addressEditText = (EditText) findViewById(R.id.doctor_AddressEditText);
@@ -86,7 +87,8 @@ public class Doctor_Register extends AppCompatActivity {
      * Put data into database
      * */
     public void register(View view) {
-        String name = accountEditText.getText().toString();
+        String first = firstEditText.getText().toString();
+        String last = lastEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String phoneNum = phoneNumEditText.getText().toString();
         String address = addressEditText.getText().toString();
@@ -117,8 +119,8 @@ public class Doctor_Register extends AppCompatActivity {
         //}
         //});
 
-        Account account = new Account(name, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
-        accountRefference.child(name).setValue(account);
+        Account account = new Account(first, last, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
+        accountRefference.child(email).setValue(account);
 
         finish();
     }
