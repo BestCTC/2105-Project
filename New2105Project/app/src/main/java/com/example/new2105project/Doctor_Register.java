@@ -125,6 +125,10 @@ public class Doctor_Register extends AppCompatActivity {
             gender = Gender.FEMALE;
         }
 
+        String target = specialties;
+        String[] role = {"family medicine", "internal medicine", "pediatrics", "obstetrics", "gynecology"};
+
+        boolean allRolesExist = checkAllRolesExist(target, role);
 
 
 
@@ -159,7 +163,10 @@ public class Doctor_Register extends AppCompatActivity {
         }else if (specialties.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Specialties can't be empty!", Toast.LENGTH_LONG);
             toast.show();
-        }else if (email.equals("")) {
+        } else if (!allRolesExist) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Specialties not correct!", Toast.LENGTH_LONG);
+            toast.show();
+        } else if (email.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
             toast.show();
         }else {
@@ -171,4 +178,27 @@ public class Doctor_Register extends AppCompatActivity {
 
 
     }
+
+    // Function to check if all roles in the target string belong to the role array
+    public static boolean checkAllRolesExist(String target, String[] roleArray) {
+        String[] targetRoles = target.split(", ");
+
+        for (String targetRole : targetRoles) {
+            if (!containsRole(roleArray, targetRole)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Function to check if a role is in the role array
+    public static boolean containsRole(String[] roleArray, String targetRole) {
+        for (String role : roleArray) {
+            if (role.equals(targetRole)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
