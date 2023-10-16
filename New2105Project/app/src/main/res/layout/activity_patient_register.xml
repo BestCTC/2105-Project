@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Health Card Number:"
-            android:inputType="text" />
+            android:inputType="number" />
 
         <RadioGroup
             android:id="@+id/patient_genderGroup"

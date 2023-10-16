@@ -142,8 +142,8 @@ public class Doctor_Register extends AppCompatActivity {
         //}
         //}
         //});
-        if (phoneNum.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Phone number can't be empty!", Toast.LENGTH_LONG);
+        if (phoneNum.equals("") || !isNumber(phoneNum)) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Phone number can't be empty and it must be a number!", Toast.LENGTH_LONG);
             toast.show();
         } else if (first.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "First name can't be empty!", Toast.LENGTH_LONG);
@@ -157,8 +157,8 @@ public class Doctor_Register extends AppCompatActivity {
         }else if (address.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Address can't be empty!", Toast.LENGTH_LONG);
             toast.show();
-        }else if (employeeNum.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Employee number can't be empty!", Toast.LENGTH_LONG);
+        }else if (employeeNum.equals("") || !isNumber(employeeNum)) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Employee number can't be empty and it must be a number!", Toast.LENGTH_LONG);
             toast.show();
         }else if (specialties.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Specialties can't be empty!", Toast.LENGTH_LONG);
@@ -199,6 +199,21 @@ public class Doctor_Register extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    /**
+     * Testing is a String if it can be convert to integer
+     *
+     * @param s
+     * @return: boolean
+     */
+    public boolean isNumber(String s){
+        try{
+            int number = Integer.valueOf(s);
+        } catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
 }
