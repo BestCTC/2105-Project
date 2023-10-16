@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
          * If you do not fill in your name or password when logging in, a prompt will be issued.
          * */
         if (email.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Account name can't be empty!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
             toast.show();
         } else if (password.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Password can't be empty!", Toast.LENGTH_LONG);

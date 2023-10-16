@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.new2105project.Entity.Account;
 import com.example.new2105project.Entity.Account_Types;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import java.util.regex.Pattern;
 
 public class Doctor_Register extends AppCompatActivity {
 
@@ -73,7 +75,18 @@ public class Doctor_Register extends AppCompatActivity {
         firstEditText= (EditText) findViewById(R.id.doctor_FirstNameEditText);
         lastEditText = (EditText) findViewById(R.id.doctor_LastNameEditText);
         passwordEditText = (EditText) findViewById(R.id.doctor_PasswordEditText);
+
         phoneNumEditText = (EditText) findViewById(R.id.doctor_PhoneNumberEditText);
+        //if (phoneNumEditText.equals("")) {
+          //  Toast toast = Toast.makeText(getApplicationContext(), "Phone number can't be empty!", Toast.LENGTH_LONG);
+            //toast.show();
+        //} else if (isPositiveInteger(phoneNumEditText.getText().toString())) {
+          //  Toast toast = Toast.makeText(getApplicationContext(), "Phone number not valid!", Toast.LENGTH_LONG);
+            //toast.show();
+        //} else {}
+
+
+
         addressEditText = (EditText) findViewById(R.id.doctor_AddressEditText);
         employeeNumEditText = (EditText) findViewById(R.id.doctor_EmployeeNumberEditText);
         specialtiesEditText = (EditText) findViewById(R.id.doctor_SpecialtiesEditText);
@@ -81,6 +94,13 @@ public class Doctor_Register extends AppCompatActivity {
         genderGroup = (RadioGroup) findViewById(R.id.doctor_genderGroup);
 
     }
+
+   // private static final String POSITIVE_INTEGER_REGEX = "[0-9]+";
+    //private static final Pattern POSITIVE_INTEGER_PATTERN = Pattern.compile(POSITIVE_INTEGER_REGEX);
+
+    //public static final boolean isPositiveInteger(String s) {
+      //  return POSITIVE_INTEGER_PATTERN.matcher(s).matches();
+    //}
 
 
     /**
@@ -118,10 +138,37 @@ public class Doctor_Register extends AppCompatActivity {
         //}
         //}
         //});
+        if (phoneNum.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Phone number can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        } else if (first.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "First name can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        } else if (last.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "last name can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (password.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Password can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (address.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Address can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (employeeNum.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Employee number can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (specialties.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Specialties can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (email.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else {
+            Account account = new Account(first, last, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
+            accountRefference.child(email).setValue(account);
+            finish();
+        }
 
-        Account account = new Account(first, last, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
-        accountRefference.child(email).setValue(account);
 
-        finish();
+
     }
 }

@@ -6,6 +6,7 @@ package com.example.new2105project;
         import android.view.View;
         import android.widget.EditText;
         import android.widget.RadioGroup;
+        import android.widget.Toast;
 
         import com.example.new2105project.Entity.Account;
         import com.example.new2105project.Entity.Account_Types;
@@ -124,12 +125,38 @@ public class Patient_Register extends AppCompatActivity {
             //}
         //});
 
-        Account account = new Account(first, last, password, Account_Types.PATIENT, gender, phoneNum, address, healthCardNum, null,email);
-        accountRefference.child(email).setValue(account);
 
-        /**
-         * Exit current page
-         * */
-        finish();
+        if (phoneNum.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Phone number can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        } else if (first.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "First name can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        } else if (last.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "last name can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (password.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Password can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (address.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Address can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (healthCardNum.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Health card number can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else if (email.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
+            toast.show();
+        }else {
+            Account account = new Account(first, last, password, Account_Types.PATIENT, gender, phoneNum, address, healthCardNum, null,email);
+            accountRefference.child(email).setValue(account);
+
+            /**
+             * Exit current page
+             * */
+            finish();
+        }
+
+
     }
 }
