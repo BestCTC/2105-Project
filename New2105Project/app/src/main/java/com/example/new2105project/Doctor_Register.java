@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Doctor_Register extends AppCompatActivity {
@@ -102,10 +104,16 @@ public class Doctor_Register extends AppCompatActivity {
       //  return POSITIVE_INTEGER_PATTERN.matcher(s).matches();
     //}
 
+    public static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 
-    /**
-     * Put data into database
-     * */
+        /**
+         * Put data into database
+         * */
     public void register(View view) {
         String first = firstEditText.getText().toString();
         String last = lastEditText.getText().toString();
@@ -169,7 +177,10 @@ public class Doctor_Register extends AppCompatActivity {
         } else if (email.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
             toast.show();
-        }else {
+        }/*else if(!isValidEmail(email)){
+            Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
+            toast.show();
+        }*/else {
             Account account = new Account(first, last, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
             accountRefference.child(email).setValue(account);
             finish();

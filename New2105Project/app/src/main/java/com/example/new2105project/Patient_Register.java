@@ -17,6 +17,9 @@ package com.example.new2105project;
         import com.google.firebase.database.FirebaseDatabase;
         import com.google.firebase.database.ValueEventListener;
 
+        import java.util.regex.Matcher;
+        import java.util.regex.Pattern;
+
 public class Patient_Register extends AppCompatActivity {
 
 
@@ -89,6 +92,13 @@ public class Patient_Register extends AppCompatActivity {
         emailEditText = (EditText) findViewById(R.id.patient_emailEditText);
     }
 
+    public static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
 
     /**
      * Put data into database
@@ -147,7 +157,11 @@ public class Patient_Register extends AppCompatActivity {
         }else if (email.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
             toast.show();
-        }else {
+        }/*else if(!isValidEmail(email)){
+            Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
+            toast.show();
+        }*/
+        else {
             Account account = new Account(first, last, password, Account_Types.PATIENT, gender, phoneNum, address, healthCardNum, null,email);
             accountRefference.child(email).setValue(account);
 
