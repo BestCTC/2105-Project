@@ -91,14 +91,14 @@ public class Patient_Register extends AppCompatActivity {
         healthCardNumEditText = (EditText) findViewById(R.id.patient_healthCardNumberEditText);
         emailEditText = (EditText) findViewById(R.id.patient_emailEditText);
     }
-
+    /*
     public static boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
-
+    */
 
     /**
      * Put data into database
