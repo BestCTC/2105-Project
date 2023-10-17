@@ -157,10 +157,7 @@ public class Patient_Register extends AppCompatActivity {
         }else if (email.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
             toast.show();
-        }/*else if(!isValidEmail(email)){
-            Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
-            toast.show();
-        }*/
+        }
         else {
             Account account = new Account(first, last, password, Account_Types.PATIENT, gender, phoneNum, address, healthCardNum, null,email);
             accountRefference.child(email).setValue(account);
@@ -170,6 +167,10 @@ public class Patient_Register extends AppCompatActivity {
              * */
             finish();
         }
+        /*else if(!isValidEmail(email)){
+            Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
+            toast.show();
+        }*/
     }
     /**
      * Testing is a String if it can be convert to integer

@@ -180,14 +180,15 @@ public class Doctor_Register extends AppCompatActivity {
         } else if (email.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Email can't be empty!", Toast.LENGTH_LONG);
             toast.show();
-        }/*else if(!isValidEmail(email)){
-            Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
-            toast.show();
-        }*/else {
+        }else {
             Account account = new Account(first, last, password, Account_Types.DOCTOR, gender, phoneNum, address, employeeNum, specialties, email);
             accountRefference.child(email).setValue(account);
             finish();
         }
+        /*else if(!isValidEmail(email)){
+            Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
+            toast.show();
+        }*/
 
 
 
