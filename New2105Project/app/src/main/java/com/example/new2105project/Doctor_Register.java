@@ -185,7 +185,8 @@ public class Doctor_Register extends AppCompatActivity {
             accountRefference.child(email).setValue(account);
             finish();
         }
-        /*else if(!isValidEmail(email)){
+        /*valid email checker
+        else if(!isValidEmail(email)){
             Toast toast = Toast.makeText(getApplicationContext(), "Email invalid!", Toast.LENGTH_LONG);
             toast.show();
         }*/
