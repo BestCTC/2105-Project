@@ -95,7 +95,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="(If more than two specialtie, use &quot;,&quot; to separate them out (e.g. Stomatology, Brain Surgery, Rhinology )"
+            android:text="(If more than two specialtie, use &quot;,&quot; to separate them out (e.g.,family medicine, internal medicine, pediatrics, obstetrics, and gynecology )"
             android:textSize="10dp" />
 
         <RadioGroup
